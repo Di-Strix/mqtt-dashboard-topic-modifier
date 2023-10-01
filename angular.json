@@ -73,6 +73,13 @@
           "options": {
             "browserTarget": "mqtt-dashboard-topic-modifier:build"
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2,
+            "browserTarget": "mqtt-dashboard-topic-modifier:build:production"
+          }
         }
       }
     }

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mqtt-dashboard-topic-modifier": {
+      "hosting": {
+        "mqtt-dashboard-topic-modifier": [
+          "mqtt-dashboard-topic-modifier"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mqtt-dashboard-topic-modifier"
+  }
+}
