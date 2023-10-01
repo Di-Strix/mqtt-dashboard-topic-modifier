@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { catchError, debounceTime, map, of, switchMap } from 'rxjs';
+import { catchError, debounceTime, map, of, switchMap, tap } from 'rxjs';
+
+const LS_BASE_CONFIG_KEY = 'baseConfig';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +30,7 @@ export class AppComponent implements OnInit {
           return of();
         }),
         map(({ baseConfig, ...rest }) => ({ ...rest, baseConfig: JSON.parse(baseConfig) })),
+        tap(({ baseConfig }) => localStorage.setItem(LS_BASE_CONFIG_KEY, JSON.stringify(baseConfig))),
         map(({ baseConfig, suffix }) => {
           const mappedTiles = baseConfig?.tiles?.map(({ topic, topic_pub, ...rest }: any) => {
             // Replacing topic and topic_pub with its value + suffix. If the value is empty - live field empty
@@ -46,6 +49,7 @@ export class AppComponent implements OnInit {
       });
 
     this.output.markAsTouched();
+    this.input.controls.baseConfig.setValue(localStorage.getItem(LS_BASE_CONFIG_KEY) || '');
   }
 
   copyOutput() {
