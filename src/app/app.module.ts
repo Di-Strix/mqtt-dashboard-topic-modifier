@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
     MatInputModule,
     MatIconModule,
     MatTooltipModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

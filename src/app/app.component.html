@@ -21,13 +21,17 @@
   </div>
 </mat-toolbar>
 
-<div class="content-container pipeline-container">
+<div
+  class="content-container pipeline-container"
+  [formGroup]="input"
+>
   <mat-form-field
     appearance="outline"
     subscriptSizing="dynamic"
   >
     <mat-label>Layout configuration</mat-label>
     <textarea
+      formControlName="baseConfig"
       matInput
       wrap="hard"
       placeholder="Insert here your MQTT-Dashboard configuration"
@@ -41,6 +45,7 @@
   >
     <mat-label>Suffix</mat-label>
     <input
+      formControlName="suffix"
       matInput
       placeholder="Enter here desired topic suffix"
     />
@@ -54,6 +59,7 @@
   <mat-form-field appearance="outline">
     <mat-label>Output</mat-label>
     <textarea
+      [formControl]="output"
       matInput
       rows="5"
       [value]=""
