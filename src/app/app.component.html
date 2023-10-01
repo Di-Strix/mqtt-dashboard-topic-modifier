@@ -37,6 +37,14 @@
       placeholder="Insert here your MQTT-Dashboard configuration"
       rows="5"
     ></textarea>
+    <button
+      matSuffix
+      mat-icon-button
+      [disabled]="!input.controls.baseConfig.value"
+      (click)="input.controls.baseConfig.setValue('')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
   </mat-form-field>
 
   <mat-form-field
