@@ -29,12 +29,12 @@
     appearance="outline"
     subscriptSizing="dynamic"
   >
-    <mat-label>Layout configuration</mat-label>
+    <mat-label>Конфигурация интерфейса</mat-label>
     <textarea
       formControlName="baseConfig"
       matInput
       wrap="hard"
-      placeholder="Insert here your MQTT-Dashboard configuration"
+      placeholder="Вставьте сюда конфигурацию интерфейса MQTT-Dashboard"
       rows="5"
     ></textarea>
     <button
@@ -51,11 +51,11 @@
     appearance="outline"
     subscriptSizing="dynamic"
   >
-    <mat-label>Suffix</mat-label>
+    <mat-label>Окончание топиков</mat-label>
     <input
       formControlName="suffix"
       matInput
-      placeholder="Enter here desired topic suffix"
+      placeholder="Введите что нужно добавить"
     />
   </mat-form-field>
 
@@ -65,14 +65,14 @@
   ></mat-icon>
 
   <mat-form-field appearance="outline">
-    <mat-label>Output</mat-label>
+    <mat-label>Новая конфигурация</mat-label>
     <textarea
       [formControl]="output"
       matInput
       rows="5"
       [value]=""
       readonly="true"
-      placeholder="Here will be your new layout configuration"
+      placeholder="Тут будет новая конфигурация интерфейса"
     ></textarea>
     <button
       mat-icon-button

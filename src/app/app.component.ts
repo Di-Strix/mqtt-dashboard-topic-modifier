@@ -56,10 +56,10 @@ export class AppComponent implements OnInit {
     navigator.clipboard
       .writeText(this.output.getRawValue())
       .then(() => {
-        this.snackbar.open('Copied!', 'Close', { duration: 5000 });
+        this.snackbar.open('Скопировано!', 'Закрыть', { duration: 5000 });
       })
       .catch(() => {
-        this.snackbar.open('Error copying', 'Okay :(', { duration: 5000 });
+        this.snackbar.open('Ошибка копирования', 'Ладно :(', { duration: 5000 });
       });
   }
 }
