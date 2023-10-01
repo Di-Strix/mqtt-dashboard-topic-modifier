@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { catchError, debounceTime, map, of, switchMap } from 'rxjs';
 
@@ -14,6 +15,8 @@ export class AppComponent implements OnInit {
     suffix: new FormControl('', { nonNullable: true }),
   });
   output = new FormControl('', { nonNullable: true });
+
+  constructor(private snackbar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.input.valueChanges
@@ -44,5 +47,16 @@ export class AppComponent implements OnInit {
       });
 
     this.output.markAsTouched();
+  }
+
+  copyOutput() {
+    navigator.clipboard
+      .writeText(this.output.getRawValue())
+      .then(() => {
+        this.snackbar.open('Copied!', 'Close', { duration: 5000 });
+      })
+      .catch(() => {
+        this.snackbar.open('Error copying', 'Okay :(', { duration: 5000 });
+      });
   }
 }

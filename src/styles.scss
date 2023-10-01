@@ -38,6 +38,7 @@ $light-theme: mat.define-light-theme(
 @include mat.form-field-theme($dark-theme);
 @include mat.input-theme($dark-theme);
 @include mat.tooltip-theme($dark-theme);
+@include mat.snack-bar-theme($dark-theme);
 
 @media (prefers-color-scheme: light) {
   @include mat.core-color($light-theme);
@@ -47,6 +48,7 @@ $light-theme: mat.define-light-theme(
   @include mat.form-field-color($light-theme);
   @include mat.input-color($light-theme);
   @include mat.tooltip-color($light-theme);
+  @include mat.snack-bar-color($light-theme);
 }
 
 .content-container {
