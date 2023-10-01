@@ -6,9 +6,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "prepare": "husky install"
   },
   "private": true,
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown"
+  },
   "dependencies": {
     "@angular/animations": "^16.2.0",
     "@angular/cdk": "^16.2.6",
@@ -30,6 +34,7 @@
     "@angular/compiler-cli": "^16.2.0",
     "@di-strix/prettier-config": "^1.0.2",
     "@types/jasmine": "~4.3.0",
+    "husky": "^8.0.0",
     "typescript": "~5.1.3"
   }
 }
