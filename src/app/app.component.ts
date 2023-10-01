@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.input.valueChanges
       .pipe(
-        debounceTime(250),
         map((form) => form as Required<typeof form>),
         switchMap((value) => {
           if (value.baseConfig) return of(value);
