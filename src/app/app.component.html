@@ -20,3 +20,52 @@
     </a>
   </div>
 </mat-toolbar>
+
+<div class="content-container pipeline-container">
+  <mat-form-field
+    appearance="outline"
+    subscriptSizing="dynamic"
+  >
+    <mat-label>Layout configuration</mat-label>
+    <textarea
+      matInput
+      wrap="hard"
+      placeholder="Insert here your MQTT-Dashboard configuration"
+      rows="5"
+    ></textarea>
+  </mat-form-field>
+
+  <mat-form-field
+    appearance="outline"
+    subscriptSizing="dynamic"
+  >
+    <mat-label>Suffix</mat-label>
+    <input
+      matInput
+      placeholder="Enter here desired topic suffix"
+    />
+  </mat-form-field>
+
+  <mat-icon
+    class="pipe-sign"
+    fontIcon="keyboard_double_arrow_down"
+  ></mat-icon>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Output</mat-label>
+    <textarea
+      matInput
+      rows="5"
+      [value]=""
+      readonly="true"
+      placeholder="Here will be your new layout configuration"
+    ></textarea>
+    <button
+      mat-icon-button
+      matSuffix
+      matTooltip="Copy"
+    >
+      <mat-icon matSuffix>content_copy</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
