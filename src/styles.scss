@@ -43,10 +43,10 @@ $light-theme: mat.define-light-theme(
   @include mat.core-color($light-theme);
   @include mat.toolbar-color($light-theme);
   @include mat.button-color($light-theme);
-  @include mat.icon-button-color($dark-theme);
+  @include mat.icon-button-color($light-theme);
   @include mat.form-field-color($light-theme);
   @include mat.input-color($light-theme);
-  @include mat.tooltip-color($dark-theme);
+  @include mat.tooltip-color($light-theme);
 }
 
 .content-container {
