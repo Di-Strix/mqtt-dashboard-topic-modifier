@@ -1,3 +1,5 @@
+@use '@angular/material' as mat;
+
 html,
 body {
   height: 100%;
@@ -5,4 +7,42 @@ body {
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+$dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: mat.define-palette(mat.$purple-palette),
+      accent: mat.define-palette(mat.$green-palette),
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: mat.define-palette(mat.$indigo-palette),
+      accent: mat.define-palette(mat.$pink-palette),
+    ),
+  )
+);
+
+@include mat.core();
+
+@include mat.core-theme($dark-theme);
+@include mat.toolbar-theme($dark-theme);
+@include mat.icon-button-theme($dark-theme);
+
+@media (prefers-color-scheme: light) {
+  @include mat.core-color($light-theme);
+  @include mat.toolbar-color($light-theme);
+  @include mat.icon-button-color($dark-theme);
+}
+
+.content-container {
+  max-width: 600px;
+  padding: 0 0.5rem;
+  margin: 0 auto;
 }

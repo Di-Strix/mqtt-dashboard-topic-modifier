@@ -1,0 +1,9 @@
+mat-toolbar {
+  margin-bottom: 1rem;
+
+  .header-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+}
